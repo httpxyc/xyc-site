@@ -1,0 +1,132 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.0.5",
+  "deps": {},
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": "main-micro-site/.eslintrc.cjs",
+        "hash": "18224317155734308275"
+      },
+      {
+        "file": "main-micro-site/.gitignore",
+        "hash": "13046175384202504187"
+      },
+      {
+        "file": "main-micro-site/README.md",
+        "hash": "11460966644741158790"
+      },
+      {
+        "file": "main-micro-site/index.html",
+        "hash": "4025202329384162906"
+      },
+      {
+        "file": "main-micro-site/package.json",
+        "hash": "10575776844975453969"
+      },
+      {
+        "file": "main-micro-site/public/vite.svg",
+        "hash": "16046085400642193116"
+      },
+      {
+        "file": "main-micro-site/src/App.css",
+        "hash": "3739391659270974612"
+      },
+      {
+        "file": "main-micro-site/src/App.tsx",
+        "hash": "4238939368060857942"
+      },
+      {
+        "file": "main-micro-site/src/assets/react.svg",
+        "hash": "16069471864800376455"
+      },
+      {
+        "file": "main-micro-site/src/index.css",
+        "hash": "957896817323665666"
+      },
+      {
+        "file": "main-micro-site/src/main.tsx",
+        "hash": "12948679595907665671"
+      },
+      {
+        "file": "main-micro-site/src/vite-env.d.ts",
+        "hash": "12946363841406869089"
+      },
+      {
+        "file": "main-micro-site/tsconfig.json",
+        "hash": "14032556756270793734"
+      },
+      {
+        "file": "main-micro-site/tsconfig.node.json",
+        "hash": "4208030242441905014"
+      },
+      {
+        "file": "main-micro-site/vite.config.ts",
+        "hash": "7008402861428644331"
+      },
+      {
+        "file": "react-components/.eslintrc.cjs",
+        "hash": "18224317155734308275"
+      },
+      {
+        "file": "react-components/.gitignore",
+        "hash": "13046175384202504187"
+      },
+      {
+        "file": "react-components/README.md",
+        "hash": "11460966644741158790"
+      },
+      {
+        "file": "react-components/index.html",
+        "hash": "4025202329384162906"
+      },
+      {
+        "file": "react-components/package.json",
+        "hash": "16568932104566983544"
+      },
+      {
+        "file": "react-components/public/vite.svg",
+        "hash": "16046085400642193116"
+      },
+      {
+        "file": "react-components/src/App.css",
+        "hash": "3739391659270974612"
+      },
+      {
+        "file": "react-components/src/App.tsx",
+        "hash": "4238939368060857942"
+      },
+      {
+        "file": "react-components/src/assets/react.svg",
+        "hash": "16069471864800376455"
+      },
+      {
+        "file": "react-components/src/index.css",
+        "hash": "957896817323665666"
+      },
+      {
+        "file": "react-components/src/main.tsx",
+        "hash": "12948679595907665671"
+      },
+      {
+        "file": "react-components/src/vite-env.d.ts",
+        "hash": "12946363841406869089"
+      },
+      {
+        "file": "react-components/tsconfig.json",
+        "hash": "14032556756270793734"
+      },
+      {
+        "file": "react-components/tsconfig.node.json",
+        "hash": "4208030242441905014"
+      },
+      {
+        "file": "react-components/vite.config.ts",
+        "hash": "7008402861428644331"
+      }
+    ]
+  }
+}
