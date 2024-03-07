@@ -10,7 +10,7 @@
   "license": "ISC",
   "main": "index.js",
   "publishConfig": {
-    "registry": "https://registry.npmmirror.com"
+    "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
     "eslint": ">= 8"
