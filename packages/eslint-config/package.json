@@ -1,0 +1,39 @@
+{
+  "name": "@httpxyc/eslint-config",
+  "version": "0.0.0",
+  "description": "my eslint config",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "author": "httpxyc",
+  "homepage": "http:///packages/eslint-config",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@httpxyc/eslint-config.test.js"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-xo": "^0.44.0",
+    "eslint-config-xo-typescript": "^3.0.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
