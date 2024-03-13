@@ -5,8 +5,6 @@ function Demo() {
   return (
     <div>
       page
-
-      <Demo />
       <Outlet />
     </div>
   );

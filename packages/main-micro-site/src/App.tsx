@@ -27,7 +27,7 @@ function App({ children }: { children: ReactNode }) {
         </Content>
       </Layout>
       <Footer className="flex-container center">
-        micro basic
+        micro basic123
       </Footer>
     </Layout>
   );
