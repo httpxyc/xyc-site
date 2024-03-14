@@ -1,0 +1,35 @@
+{
+  "name": "@mozartchen/create-router",
+  "version": "0.0.0",
+  "description": "create router by project directory for react or vue",
+  "author": "mozartchen <xiao_yaochen@126.com>",
+  "homepage": "https://github.com/httpxyc/xyc-site#readme",
+  "license": "ISC",
+  "main": "main.js",
+  "exports": {
+    "./react": {
+      "require": "./lib/react/require.js",
+      "import": "./lib/react/module.mjs"
+    },
+    "./vue": {}
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/httpxyc/xyc-site.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@mozartchen/create-router.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/httpxyc/xyc-site/issues"
+  },
+  "dependencies": {
+    "@loadable/component": "^5.16.3"
+  }
+}
