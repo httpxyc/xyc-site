@@ -24,12 +24,19 @@
     "url": "git+https://github.com/httpxyc/xyc-site.git"
   },
   "scripts": {
-    "test": "node ./__tests__/@mozartchen/create-router.test.js"
+    "test": "node ./__tests__/@mozartchen/create-router.test.js",
+    "build-react": "npx babel --presets @babel/preset-react src/react/require.jsx -o ./lib/react/require.js && npx babel --presets @babel/preset-react src/react/module.jsx -o ./lib/react/module.mjs"
   },
   "bugs": {
     "url": "https://github.com/httpxyc/xyc-site/issues"
   },
   "dependencies": {
-    "@loadable/component": "^5.16.3"
+    "@loadable/component": "^5.16.3",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-react": "^7.23.3"
   }
 }
