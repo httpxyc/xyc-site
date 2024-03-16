@@ -1,6 +1,6 @@
 {
   "name": "@mozartchen/create-router",
-  "version": "0.0.1-1",
+  "version": "0.0.3",
   "description": "create router by project directory for react or vue",
   "author": "mozartchen <xiao_yaochen@126.com>",
   "homepage": "https://github.com/httpxyc/xyc-site#readme",
@@ -9,7 +9,8 @@
   "exports": {
     "./react": {
       "require": "./lib/react/require.js",
-      "import": "./lib/react/module.mjs"
+      "import": "./lib/react/module.js",
+      "types": "./lib/react/module.d.ts"
     },
     "./vue": {}
   },
@@ -25,7 +26,9 @@
   },
   "scripts": {
     "test": "node ./__tests__/@mozartchen/create-router.test.js",
-    "build-react": "npx babel --presets @babel/preset-react src/react/require.jsx -o ./lib/react/require.js && npx babel --presets @babel/preset-react src/react/module.jsx -o ./lib/react/module.mjs",
+    "build-react-babel": "npx babel --presets @babel/preset-react src/react/require.jsx -o ./lib/react/require.js && npx babel --presets @babel/preset-react src/react/module.jsx -o ./lib/react/module.js",
+    "build-react-tsc-es": "npx tsc --module esnext --target esnext --outDir ./lib/react --jsx react",
+    "build-react-tsc-cjs": "npx tsc --module commonjs --target esnext --outDir ./lib/react-cjs --jsx react"
   },
   "bugs": {
     "url": "https://github.com/httpxyc/xyc-site/issues"
@@ -37,6 +40,9 @@
   "devDependencies": {
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.24.0",
-    "@babel/preset-react": "^7.23.3"
+    "@babel/preset-react": "^7.23.3",
+    "@types/loadable__component": "^5.13.9",
+    "@types/node": "^20.11.28",
+    "@types/react": "^18.2.56"
   }
 }

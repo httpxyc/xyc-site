@@ -1,6 +1,6 @@
-const React = require("react");
-const loadable = require("@loadable/component");
-const createRoutes = function (paths) {
+import React from "react";
+import loadable from "@loadable/component";
+export default function (paths) {
     const rowList = Object.keys(paths).map((key) => {
         const Ele = loadable(paths[key]);
         return {
@@ -52,6 +52,5 @@ const createRoutes = function (paths) {
         hasDone: true,
     });
     return resList;
-};
-module.exports = createRoutes;
-export {};
+}
+;
