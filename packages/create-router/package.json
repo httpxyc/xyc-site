@@ -1,6 +1,6 @@
 {
   "name": "@mozartchen/create-router",
-  "version": "0.0.0",
+  "version": "0.0.1-1",
   "description": "create router by project directory for react or vue",
   "author": "mozartchen <xiao_yaochen@126.com>",
   "homepage": "https://github.com/httpxyc/xyc-site#readme",
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "test": "node ./__tests__/@mozartchen/create-router.test.js",
-    "build-react": "npx babel --presets @babel/preset-react src/react/require.jsx -o ./lib/react/require.js && npx babel --presets @babel/preset-react src/react/module.jsx -o ./lib/react/module.mjs"
+    "build-react": "npx babel --presets @babel/preset-react src/react/require.jsx -o ./lib/react/require.js && npx babel --presets @babel/preset-react src/react/module.jsx -o ./lib/react/module.mjs",
   },
   "bugs": {
     "url": "https://github.com/httpxyc/xyc-site/issues"
