@@ -1,7 +1,8 @@
 import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
 import { type ReactNode } from 'react';
-import { Menu } from './components/menu.tsx';
+import { MenuContainer } from './components/menu.tsx';
+import { colors } from './assets/css/colors.ts';
 
 const {
   Header, Footer, Sider, Content,
@@ -12,22 +13,33 @@ const layoutStyle = {
   height: '100vh',
 };
 
-function App({ children }: { children: ReactNode }) {
+const siderStyle = {
+  background: colors.headerBack,
+};
+const footerStyle = {
+  background: colors.headerBack,
+  borderTop: '1px solid #e8e8e8',
+};
+const headerStyle = {
+  background: colors.headerBack,
+};
+
+function App() {
   return (
     <Layout style={layoutStyle}>
-      <Header>
+      <Header style={headerStyle}>
         Header
       </Header>
       <Layout>
-        <Sider width="10%">
-          <Menu />
+        <Sider width="10%" style={siderStyle}>
+          <MenuContainer />
         </Sider>
-        <Content>
-          {children}
+        <Content style={{ background: colors.white }}>
+          <Outlet />
         </Content>
       </Layout>
-      <Footer className="flex-container center">
-        micro basic123
+      <Footer className="flex-container center" style={footerStyle}>
+        micro basic
       </Footer>
     </Layout>
   );

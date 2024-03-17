@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { RouterProvider } from 'react-router-dom';
-// import { registerMicroApps, start } from 'qiankun';
 import App from './App.tsx';
-import { createRouter } from './create-router.tsx';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import createRoutes, { type CustomerRouteProps, type PathsType } from '@mozartchen/create-router/react';
 
-const router = createRouter(import.meta.glob('/src/pages/**/page.tsx'));
+const routes: CustomerRouteProps[] = createRoutes(import.meta.glob('/src/pages/**/page.tsx') as PathsType, <App />);
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App>
-      <RouterProvider router={router} />
-    </App>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
 
