@@ -9,4 +9,4 @@ export type CustomerRouteProps = {
     path: string;
     children?: CustomerRouteProps[];
 };
-export default function (paths: PathsType): CustomerRouteProps[];
+export default function (paths: PathsType, HomePage?: ReactNode): CustomerRouteProps[];

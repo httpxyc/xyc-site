@@ -1,6 +1,6 @@
 import React from "react";
 import loadable from "@loadable/component";
-export default function (paths) {
+export default function (paths, HomePage) {
     const rowList = Object.keys(paths).map((key) => {
         const Ele = loadable(paths[key]);
         return {
@@ -46,11 +46,16 @@ export default function (paths) {
         element: React.createElement("div", null, "404"),
         hasDone: true,
     });
-    resList.push({
-        path: '/',
-        element: React.createElement("div", null, "Home"),
-        hasDone: true,
-    });
+    if (HomePage) {
+        return [
+            {
+                path: '/',
+                element: HomePage,
+                hasDone: true,
+                children: resList
+            }
+        ];
+    }
     return resList;
 }
 ;

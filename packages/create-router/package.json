@@ -1,6 +1,6 @@
 {
   "name": "@mozartchen/create-router",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "create router by project directory for react or vue",
   "author": "mozartchen <xiao_yaochen@126.com>",
   "homepage": "https://github.com/httpxyc/xyc-site#readme",

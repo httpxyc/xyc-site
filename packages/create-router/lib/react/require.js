@@ -1,6 +1,6 @@
 const React = require("react");
 const loadable = require("@loadable/component");
-const createRoutes = function (paths) {
+const createRoutes = function (paths, HomePage) {
     const rowList = Object.keys(paths).map((key) => {
         const Ele = loadable(paths[key]);
         return {
@@ -46,11 +46,16 @@ const createRoutes = function (paths) {
         element: React.createElement("div", null, "404"),
         hasDone: true,
     });
-    resList.push({
-        path: '/',
-        element: React.createElement("div", null, "Home"),
-        hasDone: true,
-    });
+    if (HomePage) {
+        return [
+            {
+                path: '/',
+                element: HomePage,
+                hasDone: true,
+                children: resList
+            }
+        ];
+    }
     return resList;
 };
 module.exports = createRoutes;

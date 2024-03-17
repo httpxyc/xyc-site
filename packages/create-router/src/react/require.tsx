@@ -13,7 +13,7 @@ export type CustomerRouteProps = {
     path:string,
     children?: CustomerRouteProps[]
 }
-const createRoutes =  function (paths:PathsType):CustomerRouteProps[] {
+const createRoutes =  function (paths:PathsType,HomePage?: ReactNode):CustomerRouteProps[] {
     const rowList:CustomerRouteProps[] = Object.keys(paths).map((key) => {
         const Ele = loadable(paths[key] as any);
         return {
@@ -57,11 +57,17 @@ const createRoutes =  function (paths:PathsType):CustomerRouteProps[] {
         element: <div>404</div>,
         hasDone: true,
     });
-    resList.push({
-        path: '/',
-        element: <div>Home</div>,
-        hasDone: true,
-    });
+    if(HomePage){
+        return [
+            {
+                path: '/',
+                element: HomePage,
+                hasDone: true,
+                children: resList
+            }
+        ]
+    }
+    
     return resList;
 };
 module.exports = createRoutes;
