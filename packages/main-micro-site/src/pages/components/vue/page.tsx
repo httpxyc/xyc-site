@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Vue() {
   return (
-    <div>Vue components</div>
+    <div id="vueContainer">Vue components</div>
   );
 }
