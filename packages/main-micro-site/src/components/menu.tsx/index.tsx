@@ -10,7 +10,7 @@ export function MenuContainer() {
   const location = useLocation();
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
-    // navigate(e?.keyPath?.reverse()?.join('/') || '/');
+    navigate(e?.keyPath?.reverse()?.join('/') || '/');
     // navigate
   };
 
@@ -18,7 +18,7 @@ export function MenuContainer() {
     let pathArr = location.pathname.split('/');
     let key = pathArr?.[pathArr?.length - 1];
     console.log('key:', key);
-    setDefaultActiveKey(key || 'home');
+    setDefaultActiveKey(key || 'any');
   }, [location]);
 
   return defaultActiveKey && (
