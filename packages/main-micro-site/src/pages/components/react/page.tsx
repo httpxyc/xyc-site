@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import classes from './index.module.less';
 import WujieReact from 'wujie-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ReactPage() {
+  const navigate = useNavigate();
+
   return (
-    <WujieReact
-      width="100%"
-      height="100%"
-      name="react components"
-      url="http://localhost:5173/"
-      sync
-      // fetch="{fetch}"
-      // props="{props}"
-      // beforeLoad="{beforeLoad}"
-      // beforeMount="{beforeMount}"
-      // afterMount="{afterMount}"
-      // beforeUnmount="{beforeUnmount}"
-      // afterUnmount="{afterUnmount}"
-    />
+    <div className={classes.reactContainer}>
+      <WujieReact
+        width="100%"
+        height="100%"
+        name="react components"
+        url="http://localhost:8001/components"
+        sync
+        // fetch="{fetch}"
+        // props="{props}"
+        // beforeLoad="{beforeLoad}"
+        // beforeMount="{beforeMount}"
+        // afterMount="{afterMount}"
+        // beforeUnmount="{beforeUnmount}"
+        // afterUnmount="{afterUnmount}"
+      />
+    </div>
 
   );
 }

@@ -1,0 +1,119 @@
+.container {
+  height: 100%;
+
+  // width: 300px; // 测试超出...样式用，去掉
+  .tree-container-single {
+    :global {
+      .ant-tree-switcher-noop {
+        display: none;
+      }
+    }
+  }
+
+  .tree-container,
+  .tree-container-single {
+    width: 100%;
+    background-color: white;
+
+    .custom-leaf-icon {
+      display: inline-block;
+      margin-right: 5px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #a3a3ac;
+      transform: translate(0px, -3px);
+    }
+
+    :global {
+      .ant-tree-treenode {
+        margin-bottom: 0 !important;
+      }
+
+      .ant-tree-switcher {
+        text-align: left;
+      }
+
+      .ant-tree-treenode {
+        &-checkbox-checked {
+          color: #586ee0;
+        }
+      }
+
+      .site-tree-search-value {
+        color: #f50;
+      }
+
+      .ant-tree-switcher-noop {
+        display: none;
+      }
+
+      .ant-tree-node-content-wrapper {
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &.ant-tree-node-selected {
+          background: rgba(88, 110, 224, 0.12);
+          color: #586ee0;
+        }
+
+        &:hover {
+          background: rgba(88, 110, 224, 0.06);
+        }
+      }
+    }
+  }
+}
+
+// 展开折叠按钮css
+.icon-expand,
+.icon-receipts {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(118, 118, 132, 0.5);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    transition: transform 0.3s ease-out;
+    background: rgba(118, 118, 132, 0.8);
+  }
+
+  &::before {
+    top: 4px;
+    right: 2px;
+    left: 2px;
+    height: 2px;
+    transform: rotate(0deg) scaleY(0.75);
+  }
+
+  &::after {
+    top: 2px;
+    bottom: 2px;
+    left: 4px;
+    width: 2px;
+    transform: rotate(0deg) scaleX(0.75);
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid #586ee0;
+
+    &::after,
+    &::before {
+      background: #586ee0;
+    }
+  }
+}
+
+.icon-receipts::after {
+  transform: rotate(90deg) scaleX(0.75);
+}
+
+.icon-expand::before {
+  transform: rotate(-180deg) scaleY(0.75);
+}
