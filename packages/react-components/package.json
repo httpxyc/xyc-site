@@ -74,8 +74,10 @@
   "dependencies": {
     "@ant-design/icons": "^5.3.3",
     "antd": "^5.15.3",
+    "dayjs": "^1.11.10",
     "lodash": "^4.17.21",
     "nanoid": "^5.0.4",
+    "store": "^2.0.12",
     "styled-components": "^6.1.8"
   }
 }
