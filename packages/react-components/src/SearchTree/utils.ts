@@ -21,7 +21,7 @@ export const treePreHandler = (tree: DataNode[])=>{
     if(node?.children&&node.children.length>0){
       node.isLeaf=false
       node.children.forEach((item)=>{
-        loop(item,parentKeys.concat(node.key),parentTitles.concat(node.title))
+        loop(item,parentKeys.concat(node.key),parentTitles.concat((node as any).title))
       })
     }else{
       node.isLeaf=true
@@ -130,24 +130,24 @@ export const getSumaryData = (checkedNodes: TreeNode[],checkedKeys:React.Key[])=
     })
   })
   // 过滤节点
-  const sumNodes = checkedNodes.filter(node=>[...sumKeys].includes(node.key))
+  const sumNodes = checkedNodes.filter(node=>[...(sumKeys as any)].includes(node.key))
   // 记录map
   const recordMap:RecordMapType = {}
   sumNodes.forEach(node=>{
-    if(!recordMap.hasOwnProperty(node.key)){
+    if(!recordMap.hasOwnProperty((node as any)?.key)){
       // 将node存入，加入新数据childCheckedKeys、childCheckedKeys存放勾选的子节点key、叶子节点key，用于删除等操作
       const temp = {...node,childCheckedKeys:[],childCheckedLeafKeys:[]}
-      recordMap[node.key] = temp
+      recordMap[(node as any)?.key] = temp
     }
   })
   // 给记录map注入选择key
   const injectHandler =(mapKey:React.Key,node:TreeNode)=>{
-    if(recordMap.hasOwnProperty(mapKey)){
+    if(recordMap.hasOwnProperty(mapKey as string)){
       // 注入选择key
-      recordMap[mapKey].childCheckedKeys.push(node.key)
+      recordMap[mapKey as any].childCheckedKeys.push(node.key)
       if(node.isLeaf){
         // 注入选择叶子key
-        recordMap[mapKey].childCheckedLeafKeys.push(node.key)
+        recordMap[mapKey  as any].childCheckedLeafKeys.push(node.key)
       }
     }
   }

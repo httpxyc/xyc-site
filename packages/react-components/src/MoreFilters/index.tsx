@@ -59,7 +59,7 @@ export interface MoreFiltersProps {
   onClear?: () => void;
 }
 
-export const FilterBottomLine = styled.div`
+export const FilterBottomLine:any = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -111,6 +111,12 @@ const MoreFilters = forwardRef<MoreFiltersRefProps, MoreFiltersProps>(({
   const filterMapKeyValue = `${mapKey}-filter`;
   const filterMapKeyOuter = `${mapKey}-filter-outer`;
 
+  const setCache = () => {
+    if (filterMapKeyValue) {
+      store.set(filterMapKeyValue, form.getFieldsValue());
+    }
+  };
+
   useImperativeHandle(ref, () => {
     return {
       // 手动更新缓存，在外侧自己form.setFieldValue的情况下，不会触发Form的onValuesChange事件去更新缓存，需要手动更新缓存
@@ -120,10 +126,28 @@ const MoreFilters = forwardRef<MoreFiltersRefProps, MoreFiltersProps>(({
     };
   }, []);
 
-  const setCache = () => {
-    if (filterMapKeyValue) {
-      store.set(filterMapKeyValue, form.getFieldsValue());
-    }
+  const refreshBottomLine = () => {
+    setRefreshId(nanoid());
+  };
+  
+  const emitChange = () => {
+    onFilter?.();
+    refreshBottomLine();
+  };
+  
+  const drawerCloseHandler = () => {
+    setDrawerOpen(false);
+  };
+  
+  const okHandle = () => {
+    setCache();
+    drawerCloseHandler();
+    emitChange();
+    onOk?.();
+  };
+
+  const drawerOpenHandler = () => {
+    setDrawerOpen(true);
   };
 
   const resetHandle = () => {
@@ -143,30 +167,6 @@ const MoreFilters = forwardRef<MoreFiltersRefProps, MoreFiltersProps>(({
     onClear?.();
     onFilter?.();
     refreshBottomLine();
-  };
-
-  const okHandle = () => {
-    setCache();
-    drawerCloseHandler();
-    emitChange();
-    onOk?.();
-  };
-
-  const emitChange = () => {
-    onFilter?.();
-    refreshBottomLine();
-  };
-
-  const drawerCloseHandler = () => {
-    setDrawerOpen(false);
-  };
-
-  const drawerOpenHandler = () => {
-    setDrawerOpen(true);
-  };
-
-  const refreshBottomLine = () => {
-    setRefreshId(nanoid());
   };
 
   const deleteFilterItem = (name: FormItemProps['name']) => {
@@ -255,7 +255,7 @@ const MoreFilters = forwardRef<MoreFiltersRefProps, MoreFiltersProps>(({
           :
         </span>
         <span style={{ color: colors.orange }}>{lineRender?.rightValueFommat ? lineRender.rightValueFommat(value) : value}</span>
-        <CloseOutlined onClick={(props) => {
+        <CloseOutlined onClick={() => {
           deleteFilterItem(name);
         }}
         />

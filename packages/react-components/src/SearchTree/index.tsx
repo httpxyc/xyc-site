@@ -67,6 +67,13 @@ function InputTree({
   const [rowTreeData, setRowTreeData] = useState<TreeNode[]>([]);
   const [sumData,setSumData] = useState<RecordMapType>({})
 
+  // 获取统计信息
+  const sumaryHandler = (checkedNodes:TreeNode[],checkedKeys:React.Key[])=>{
+    const sumMap = getSumaryData(checkedNodes,checkedKeys);
+    setSumData(sumMap)
+    onSumDataLoaded?.(sumMap,checkedNodes)
+  }
+
   // 多选，选中或取消选中tree中节点时，抛出已选中的node列表、key列表、当前点击选中的node数据，设置tree的选中keys
   const onTreeNodeCheck = (
     keys: React.Key[],
@@ -80,7 +87,8 @@ function InputTree({
   ) => {
     if (checkStrictly) {
       // 父子严格模式，keys取值位置不同
-      keys = keys.checked;
+      // eslint-disable-next-line no-param-reassign
+      keys = (keys as any)?.checked;
     }
 
     // console.log('触发tree的check事件:', keys, checkedNodes, node);
@@ -114,12 +122,7 @@ function InputTree({
     }
   };
 
-  // 获取统计信息
-  const sumaryHandler = (checkedNodes:TreeNode[],checkedKeys:React.Key[])=>{
-    const sumMap = getSumaryData(checkedNodes,checkedKeys);
-    setSumData(sumMap)
-    onSumDataLoaded?.(sumMap,checkedNodes)
-  }
+  
 
   // 处理原始treeData，高亮展示搜索字符串
   const filterTreeData = useMemo(() => {
@@ -192,7 +195,7 @@ function InputTree({
     // 将命中key列表以及其父级key列表设置为FilterKeys，用于更新筛选treeData数据
     const newFilterKeys = new Set([...res?.nodes?.map(item=>item.key), ...newExpandedKeys]);
     setSearchStr(value);
-    setFilterKeys([...newFilterKeys]);
+    setFilterKeys([...(newFilterKeys as any)]);
     setAutoExpandParent(true);
   };
 
@@ -240,7 +243,7 @@ function InputTree({
     return <span className={classes['icon-expand']} />;
   }, []);
   // 树节点图标;
-  const renderTreeIcon = useCallback((props: unknown) => {
+  const renderTreeIcon = useCallback((props: any) => {
     const { isLeaf, data } = props;
 
     if (isLeaf || !data.children) {
@@ -251,7 +254,7 @@ function InputTree({
   }, []);
   const treeRender = () => {
     let element;
-    const virtureObj = {};
+    const virtureObj:any = {};
     if (virtureHeight && virtureTag) {
       virtureObj.height = virtureHeight;
     }
@@ -304,7 +307,7 @@ function InputTree({
   return (
     <div className={classes.container}>
       <div className={inputContainerClass} style={inputContainerStyle}>
-        <SearchInput onPressEnter={onPressEnter} placeholder={placeholder} />
+        <SearchInput onPressEnter={onPressEnter as any} placeholder={placeholder} />
       </div>
       <div className={treeContainerClass} style={treeContainerStyle}>
         {treeRender()}

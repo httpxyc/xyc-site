@@ -7,11 +7,11 @@ import { EditOutlined } from "@ant-design/icons";
 interface ShowEditBoxOuterProps extends ShowEditBoxItemsProps {
   title: string | ReactNode;
   setIsEdit: (isEdit: boolean) => void;
-  onSave: Promise<any>;
+  onSave: ()=>Promise<any>;
   onEditCancel: () => void;
   children?: ReactNode;
 }
-export const CardBoxDiv = styled.div`
+export const CardBoxDiv:any = styled.div`
   padding: 16px 18px 0 18px;
   border-radius: 12px;
   background-color: #F5F7F9;

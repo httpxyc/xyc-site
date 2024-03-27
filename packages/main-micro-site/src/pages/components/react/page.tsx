@@ -12,7 +12,7 @@ export default function ReactPage() {
         width="100%"
         height="100%"
         name="react components"
-        url="http://localhost:8001/components"
+        url="http://47.106.81.190:8001/components"
         sync
         // fetch="{fetch}"
         // props="{props}"
