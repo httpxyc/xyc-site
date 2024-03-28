@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     tags:
-      - 'v*'
+      - 'react-components-v*'
 
 jobs:
 
@@ -35,7 +35,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./packages/react-components/Dockerfile
           platforms: 
             linux/amd64
           push: true
