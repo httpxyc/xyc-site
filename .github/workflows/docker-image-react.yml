@@ -42,5 +42,4 @@ jobs:
           build-args: 
             APP_NAME=${{ github.event.repository.name }}
           tags: 
-            - registry.cn-shenzhen.aliyuncs.com/httpxyc/github:latest
-            - registry.cn-shenzhen.aliyuncs.com/httpxyc/github:${{ steps.version.outputs.release_version }}
+            registry.cn-shenzhen.aliyuncs.com/httpxyc/github:latest,registry.cn-shenzhen.aliyuncs.com/httpxyc/github:${{ steps.version.outputs.release_version }}
